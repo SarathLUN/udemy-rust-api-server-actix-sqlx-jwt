@@ -63,3 +63,12 @@ sqlx -V
 ```toml
 sqlx = { version = "0.8", features = [ "runtime-tokio", "tls-rustls","mysql","chrono" ] }
 ```
+- create `.env` file and add database connection string
+- create database via
+```shell
+sqlx database create
+```
+- create migration file
+```shell
+sqlx migrate add create_user_table
+```
