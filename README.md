@@ -48,3 +48,18 @@ Hello ECHO%
 
 3. API Design
 ![api.png](./documentation/api.png)
+
+## Section 3: Database Setup with SQLx
+
+1. install sqlx-cli via this [link](https://github.com/launchbadge/sqlx/tree/main/sqlx-cli)
+```shell
+cargo install sqlx-cli
+```
+- verify by
+```shell
+sqlx -V
+```
+- add dependency
+```toml
+sqlx = { version = "0.8", features = [ "runtime-tokio", "tls-rustls","mysql","chrono" ] }
+```
