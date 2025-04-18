@@ -72,3 +72,8 @@ sqlx database create
 ```shell
 sqlx migrate add create_user_table
 ```
+- design table users in the generated file
+- apply the migration
+```shell
+sqlx migration run
+```
