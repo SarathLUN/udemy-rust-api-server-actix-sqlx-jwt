@@ -77,3 +77,4 @@ sqlx migrate add create_user_table
 ```shell
 sqlx migration run
 ```
+- do the same flow for other 2 tables: `categories` and `transactions`
