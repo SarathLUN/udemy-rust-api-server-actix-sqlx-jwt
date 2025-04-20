@@ -78,3 +78,41 @@ sqlx migrate add create_user_table
 sqlx migration run
 ```
 - do the same process for other 2 tables: `categories` and `transactions`
+
+## Section 4: Basic Controller Setup
+
+- create controller module
+```shell
+mkdir "controllers"
+touch controllers/mod.rs
+```
+- declare controller module in `main.rs`
+```rust
+mod controllers; // place at the top of the file
+```
+
+- create `auth` controller
+```shell
+touch controllers/auth.rs
+```
+- public the `auth` controller in the `mod.rs` file
+```rust
+pub mod auth;
+``` 
+- create 2 handler functions for sign-up and sign-in that implement `Responder`
+- then we can register as service in `main.rs`
+- do the same process for controller user provide `me.rs`
+- let start the server and test the 4 service functions
+```shell
+cargo run
+```
+```shell
+> curl -X POST http://localhost:8080/auth/sign-up
+Sign up%
+> curl -X POST http://localhost:8080/auth/sign-in
+sign in%
+> curl -X POST http://localhost:8080/me
+update profile%
+> curl -X GET http://localhost:8080/me
+profile%
+```
